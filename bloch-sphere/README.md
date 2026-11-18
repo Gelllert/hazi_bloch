@@ -31,7 +31,7 @@ A felület elrendezéséhez a [JustQLabs Simulator](https://www.justqlabs.com/si
 * **Three.js / `@react-three/fiber` / `@react-three/drei`** (3D megjelenítés)
 * **Tailwind CSS** (felhasználói felület)
 * **`vite-plugin-pwa`** (Progressive Web App és offline támogatás)
-* **A specifikáció kérte környezet független fájl, erre a vite plugin singlefile-t használva egyettlen html-be lett csomagolva a program, a `bloch_szimulator.html` néven.**
+* **A specifikáció kérte, hogy környezet független futtatható fájlként legyen a program, erre a vite plugin singlefile-t használva egyettlen html-be lett csomagolva a program, a `bloch_szimulator.html` néven.**
 
 ---
 
