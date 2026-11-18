@@ -22,6 +22,7 @@ A felület elrendezéséhez a [JustQLabs Simulator](https://www.justqlabs.com/si
 3. **Kapuk és forgatások alkalmazása:** Kattints a kvantumkapura, vagy állíts be egy forgatási szöget az $R_x, R_y, R_z$ csúszkákkal, majd a *Forgat* gombbal alkalmazhatod.
 4. **Előzmények kezelése:** A bal oldali *Műveletek* listában bármelyik lépésnél a *Vissza ide* gombbal visszaugorhatsz az adott állapotba.
 5. **Több állapot összehasonlítása:** A felső sávban a **+ Új állapot** gombbal létrehozhatsz egy új, külön színnel jelölt állapotpályát, és kattintással válthatsz közöttük. Az állapot lemásolja az éppen aktuális vektort kezdő állapotnak.
+6. **Környezet független eléréshez rendelkezésre áll egy `dist-standalone/bloch_szimulator.html`, amit egy böngészővel rendelkező windowsos gép, bármilyen függőség nélkül elérhet.**
 
 ---
 
@@ -31,6 +32,7 @@ A felület elrendezéséhez a [JustQLabs Simulator](https://www.justqlabs.com/si
 * **Three.js / `@react-three/fiber` / `@react-three/drei`** (3D megjelenítés)
 * **Tailwind CSS** (felhasználói felület)
 * **`vite-plugin-pwa`** (Progressive Web App és offline támogatás)
+* **A specifikáció kérte, hogy környezet független futtatható fájlként legyen a program, erre a vite plugin singlefile-t használva egyettlen html-be lett csomagolva a program, a `bloch_szimulator.html` néven.**
 
 ---
 
