@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/hazi_bloch/sw.js', { scope: '/hazi_bloch/' })})}
