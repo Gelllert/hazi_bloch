@@ -8,14 +8,15 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.png'], // A public mappában lévő ikonod
+      includeAssets: ['logo.png'],
       manifest: {
         name: 'Bloch-gömb Kvantumszimulátor',
         short_name: 'Bloch-gömb',
-        description: 'Interaktív 1-qubites kvantumállapot és kapu szimulátor',
+        start_url: '/hazi_bloch/',
+        scope: '/hazi_bloch/',
+        display: 'standalone',
         theme_color: '#020617',
         background_color: '#020617',
-        display: 'standalone', // Külön ablakban, böngésző címsor nélkül indul
         icons: [
           {
             src: 'logo.png',

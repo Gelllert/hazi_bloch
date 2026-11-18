@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# Bloch Gömb szimulátor
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+(2.) feladat – Kvantuminformatikai alapok – Bloch-gömb szimulátor
 
-Currently, two official plugins are available:
+A felület elrendezéséhez a [JustQLabs Simulator](https://www.justqlabs.com/simulator) szolgált inspirációul amit előadáson mutattak. A funkciók ezekhez hasonlóak (amatőrebb megvalósítással) kiegészítve párhuzamos állapotpályák (trackek) kezelésével.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Főbb funkciók
 
-## React Compiler
+* **Interaktív 3D Bloch-gömb:** Szabadon forgatható és nagyítható WebGL nézet a kitüntetett pólusokkal ($|0\rangle, |1\rangle, |+\rangle, |-\rangle, |+i\rangle, |-i\rangle$).
+* **Tetszőleges kezdőállapot:** Választható a 6 nevezetes bázisállapot közül, vagy egyedi $(\theta, \phi)$ gömbi szögek adhatók meg.
+* **Egybites kvantumkapuk és forgatások:** Pauli-kapuk ($I, X, Y, Z$), Hadamard ($H$), fáziskapuk ($S, S^\dagger, T, T^\dagger$), valamint folytonos tengely körüli forgatások ($R_x, R_y, R_z$) $-360^\circ$ és $+360^\circ$ között.
+* **Művelettörténet (History):** Minden lépés logolt, és bármelyik korábbi állapotra egy kattintással vissza lehet állni.
+* **Párhuzamos állapotok (Trackek):** Több független kvantumállapot és saját történetük egyszerre megjeleníthető és összehasonlítható a gömbön.
+* **Offline működés (PWA):** A kód letölthető alkalmazásként is (bár specifikációban böngészővel rendelkezik a gép, de a futtatható-t is kéri szóval ez is megvalósított).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Használat
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. **Kamera vezérlése:** A 3D nézetben bal egérgombos húzással forgathatod a gömböt, az egérgörgővel pedig nagyíthatsz.
+2. **Kezdőállapot beállítása:** A jobb oldali *Kezdőállapot* panelen válassz egy előre definiált állapotot, vagy nyisd le az *Egyedi kezdőállapot ($\theta, \phi$)* részt a pontos szögek megadásához. Kezdő állapot nullázza a logokat.
+3. **Kapuk és forgatások alkalmazása:** Kattints a kvantumkapura, vagy állíts be egy forgatási szöget az $R_x, R_y, R_z$ csúszkákkal, majd a *Forgat* gombbal alkalmazhatod.
+4. **Előzmények kezelése:** A bal oldali *Műveletek* listában bármelyik lépésnél a *Vissza ide* gombbal visszaugorhatsz az adott állapotba.
+5. **Több állapot összehasonlítása:** A felső sávban a **+ Új állapot** gombbal létrehozhatsz egy új, külön színnel jelölt állapotpályát, és kattintással válthatsz közöttük. Az állapot lemásolja az éppen aktuális vektort kezdő állapotnak.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Technológiák
+
+* **React + TypeScript + Vite**
+* **Three.js / `@react-three/fiber` / `@react-three/drei`** (3D megjelenítés)
+* **Tailwind CSS** (felhasználói felület)
+* **`vite-plugin-pwa`** (Progressive Web App és offline támogatás)
+
+---
+
+## Helyi futtatás és publikálás
+
+```bash
+# Függőségek telepítése
+npm install
+
+# Fejlesztői szerver indítása
+npm run dev
+
+# Produkciós build készítése
+npm run build
+
+# Publikálás GitHub Pages-re
+npm run deploy
