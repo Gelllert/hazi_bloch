@@ -1,5 +1,5 @@
 import type { ComplexNumber, QuantumState, SphericalCoords, QuantumGate } from '../types/quantum';
-import { c, cAdd, cMult, cMag, cArg } from "./complexMaths.ts"
+import {cAdd, cMult, cMag, cArg } from "./complexMaths.ts"
 
 //kapu alkalmazása (2x2 mátrix szorzása 2x1 vektorral)
 export const applyGate = (gate: QuantumGate, state: QuantumState): QuantumState => {
